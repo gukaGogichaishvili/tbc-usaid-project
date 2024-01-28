@@ -1,0 +1,322 @@
+@font-face {
+  font-display: block;
+  font-family: wf_93c16d86ec9d47d0a2a36894f;
+  src: url("https://static.wixstatic.com/ufonts/643d94_93c16d86ec9d47d0a2a36894fbdd54fd/woff2/file.woff2") format("woff2"),
+  url("https://static.wixstatic.com/ufonts/643d94_93c16d86ec9d47d0a2a36894fbdd54fd/woff/file.woff") format("woff"),
+  url("https://static.wixstatic.com/ufonts/643d94_93c16d86ec9d47d0a2a36894fbdd54fd/ttf/file.ttf") format("ttf");
+  }
+
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #1A1E1F;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: background-color 0.3s;
+}
+
+.header-wrapper {
+  top: 0;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: background-color 0.3s;
+  background-color: #1A1E1F;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  align-items: center;
+  height: 84px;
+}
+
+.logo {
+  grid-column: 1 / 2;
+  justify-self: center; /* Center logo in the first column */
+}
+
+.navigation {
+  grid-column: 2 / 3;
+  display: flex;
+  justify-content: flex-start; /* Align nav items to the start of the second column */
+}
+
+/* ... rest of the styles for navigation and logo ... */
+
+
+.navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.navigation li {
+  margin-left: 40px;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #f4f4f4;
+  transition: color 0.3s;
+  padding-left: 12px;
+  font-family: 'wf_93c16d86ec9d47d0a2a36894f', sans-serif;
+  font-size: 14px;
+}
+
+.navigation a:hover, .navigation a.active {
+  color: #00A3E0;
+}
+
+.page-content {
+  padding-top: 60px; /* Adjust based on header height */
+}
+
+
+
+
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 352px;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: 352px;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 10%; /* Slightly to the left */
+  transform: translateY(-50%); /* Vertically center */
+  color: white; /* Assuming a dark image, for contrast */
+  text-align: left;
+}
+
+.overlay-text h1 {
+  font-size: 2em; /* Adjust as needed */
+}
+
+.overlay-text p {
+  font-size: 1em; /* Adjust as needed */
+}
+
+
+
+.about-text-section {
+  width: 100%;
+  height: 465px;
+  background-color: #2B2B2B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-text-container{
+  max-width: 960px;
+}
+
+
+
+.about-text{
+  font-size: 27px;
+  color: #f4f4f4;
+  font-family: 'wf_93c16d86ec9d47d0a2a36894f', sans-serif;
+  line-height: 1.6em;
+}
+
+
+#carousel-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* This will position the arrows at the ends */
+  width: 100%;
+  position: relative;
+  height: 363px;
+  background: #2B2B2B;
+}
+
+.carousel-container {
+  display: flex;
+  justify-content: center; /* Center the logos */
+  align-items: center;
+  flex-grow: 1; /* Allow the container to take up available space */
+  background: transparent;
+}
+
+.carousel-logo {
+  max-width: 100px; /* Adjust as needed *//* Initially hidden */
+  transition: opacity 1s ease;
+   /* Display logos inline */
+}
+
+.carousel-arrow {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.carousel-dots {
+  text-align: center;
+  padding-top: 10px;
+  position: absolute; /* Position dots at the bottom of the section */
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.carousel-dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Accordion styles remain the same */
+
+.accordion-section{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #161616;
+  flex-direction: column;
+  padding-top: 80px;
+  padding-bottom: 50px;
+}
+
+.borderless-btn{
+  
+    color: #00AFE3;       
+    background: none;    
+    border: none;       
+    font-size: 20px;     
+    cursor: pointer;     
+    font-family: 'wf_93c16d86ec9d47d0a2a36894f', sans-serif; 
+}
+
+
+.accordion-title-section{
+  width: 900px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+#accordion-content{
+  padding: 30px 40px;
+  width: 900px;
+}
+
+
+.accordion-header {
+    background-color: transparent;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    transition: 0.4s;
+    font-size: 18px;
+    color: #f4f4f4;
+    font-family: 'wf_93c16d86ec9d47d0a2a36894f', sans-serif;
+
+  }
+  
+  .accordion-header:after {
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .accordion-content {
+    padding: 0 18px;
+    background-color: transparent;
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    font-size: 14px;
+    color: #f4f4f4;
+    font-family: 'wf_93c16d86ec9d47d0a2a36894f', sans-serif;
+
+  }
+
+  .accordion-wrapper{
+    border-bottom: 1px solid rgb(53, 49, 49);
+  }
+  
+  .accordion-title-section h3{
+    font-size: 24px;
+    color: #f4f4f4;
+    font-family: 'wf_93c16d86ec9d47d0a2a36894f', sans-serif;
+  }
+
+
+  .card-section {
+    width: 100%;
+    height: 100%;
+    background-color: #161616;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Added padding for aesthetics */
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-gap: 20px; /* Space between grid items */
+    max-width: 960px; /* Adjust as needed */
+}
+
+.card {
+    background-color: transparent;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 414px; /* Make cards of equal height */
+    width: 300px;
+
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    max-height: 150px; /* Adjust as needed */
+    object-fit: cover; /* Ensure proper fit for images */
+}
+
+.card h3 {
+    margin-top: 10px;
+}
+
+.card p {
+    margin-top: 5px;
+}
+
+.card a {
+    margin-top: auto;
+    text-decoration: none;
+    color: blue;
+}
