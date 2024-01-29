@@ -1,4 +1,4 @@
-// Add this to your script.js file
+
 
 window.addEventListener('scroll', function() {
   var header = document.querySelector('.header-wrapper');
@@ -42,12 +42,12 @@ function updateCarousel() {
 }
 
 function startAutoMoveCarousel() {
-  stopAutoMoveCarousel(); // Stop any existing automatic movement
-  autoMoveCarousel = setInterval(moveRight, 3000); // Start automatic movement
+  stopAutoMoveCarousel(); 
+  autoMoveCarousel = setInterval(moveRight, 3000); 
 }
 
 function stopAutoMoveCarousel() {
-  clearInterval(autoMoveCarousel); // Clear the interval
+  clearInterval(autoMoveCarousel); 
 }
 
 function moveRight() {
@@ -89,17 +89,18 @@ startAutoMoveCarousel();
   
 
 
-  //accordion
-
 const accordionData = [
     { question: "როგორ ხდება კურსებზე რეგისტრაცია და შერჩევა?", 
     answer: "<span>კურსზე რეგისტრაციისთვის უნდა გაიარო რამდენიმე ეტაპი:</span><br/> <p><b>I ეტაპი</b><span> - პირველ ეტაპზე საჭიროა, შეავსო სასურველი კურსისთვის განკუთვნილი სარეგისტრაციო ფორმა, რომელიც განთავსებულია კურსის შიდა გვერდზე. კურსზე რეგისტრაციის დასრულების შემდეგ დაიწყება შემოსული განცხადებების გადარჩევა.</span></p>"+
   "<p><b>II ეტაპი</b><span> - შერჩევის მეორე ეტაპი კურსების მიხედვით განსხვავებულია, ზოგიერთი კურსისთვის მოიცავს პრე-ტესტს, ზოგიერთ კურსზე კი უნარების ტესტს, სადაც მინიმალური ზღვარის გადალახვის შემთხვევაში გადახვალ შერჩევის შემდეგ ეტაპზე.</span></p>"+
-  "<p><b>III ეტაპი </b><span> - მესამე ეტაპი კურსების მიხედვით განსხვავდება: Advance კურსებზე, სადაც მოითხოვება გარკვეული ტექნიკური ცოდნა, მონაწილეებმა უნდა დაწერონ ტექნიკური ტესტი ცოდნის დონის შესამოწმებლად, ხოლო კურსებზე, სადაც რაიმე ტიპის წინასწარი ცოდნა მოთხოვნილი არ არის უნდა შეასრულოთ ტექნიკური დავალება, რაც თქვენი კვლევისა და თვითსწავლის უნარს ამოწმებს.</span></p>" },
+  "<p><b>III ეტაპი </b><span> - მესამე ეტაპი კურსების მიხედვით განსხვავდება: Advance კურსებზე, სადაც მოითხოვება გარკვეული ტექნიკური ცოდნა, მონაწილეებმა უნდა დაწერონ ტექნიკური ტესტი ცოდნის დონის შესამოწმებლად, ხოლო კურსებზე, სადაც რაიმე ტიპის წინასწარი ცოდნა მოთხოვნილი არ არის უნდა შეასრულოთ ტექნიკური დავალება, რაც თქვენი კვლევისა და თვითსწავლის უნარს ამოწმებს.</span></p>" +
+  "<p><b>IV ეტაპი</b><span> - შერჩევის ბოლო მეოთხე ეტაპი მოიცავს გასაუბრებას შესარჩევ კომისიასთან. გასაუბრების წარმატებით გავლის შემთხვევაში ჩაირიცხებით კურსზე და გაფორმდება შესაბამისი ხელშეკრულება.</span></p>"+
+  "<p>* სანამ კურსზე დარეგისტრირდები მნიშვნელოვანია, ყურადღებით წაიკითხო კურსის აღწერა, ნახო რას ისწავლი კურსის განმავლობაში და გაიგო გააჩნია თუ არა კურსს დასწრების წინაპირობა. </p>"},
     { question: "შემიძლია თუ არა ერთზე მეტ კურსზე რეგისტრაცია?", 
     answer: "TBC X USAID ტექნოლოგიური განათლებისთვის პროგრამაში თითოეულ კანდიდატს აქვს მხოლოდ ერთი კურსის გავლის შესაძლებლობა. გარდა Information Security და Python კურსებისა, სადაც Basic დონის გავლის შემდეგ შესაძლებელია სწავლის გაგრძელება Advance დონეზე." },
     { question: "რა ღირს სწავლა პროგრამის ფარგლებში?", 
     answer: "პროგრამის ფარგლებში კურსებზე სწავლა სრულიად დაფინანსებულია თიბისი ბანკისა და USAID-ის მიერ." },
+    
  
   ];
   
@@ -108,32 +109,46 @@ const accordionData = [
     const accordionRoot = document.getElementById('accordion-content');   
     const container = document.createElement('div');
     container.className = 'accordion';
-    
+
+    function toggleAccordion(accordionContent, accordionHeader) {
+
+        container.querySelectorAll('.accordion-content').forEach(content => {
+            if (content !== accordionContent) {
+                content.style.display = 'none';
+                content.previousElementSibling.querySelector('.material-icons').textContent = 'keyboard_arrow_down';
+            }
+        });
+
+      
+        const isContentVisible = accordionContent.style.display === 'block';
+        accordionContent.style.display = isContentVisible ? 'none' : 'block';
+        const icon = isContentVisible ? 'keyboard_arrow_down' : 'keyboard_arrow_up';
+        accordionHeader.querySelector('.material-icons').textContent = icon;
+    }
+
     accordionItems.forEach((item, index) => {
-      const accordionWrapper = document.createElement('div');
-      accordionWrapper.className = 'accordion-wrapper'
-      const accordionHeader = document.createElement('button');
-      accordionHeader.className = 'accordion-header';
-      accordionHeader.innerHTML = item.question;
-      accordionHeader.onclick = () => {
-        const content = document.getElementById(`content-${index}`);
-        content.style.display = content.style.display === 'block' ? 'none' : 'block';
-      };
-  
-      const accordionContent = document.createElement('div');
-      accordionContent.className = 'accordion-content';
-      accordionContent.id = `content-${index}`;
-      accordionContent.style.display = 'none';
-      accordionContent.innerHTML = item.answer;
-  
-      accordionWrapper.appendChild(accordionHeader);
-      accordionWrapper.appendChild(accordionContent);
-      container.appendChild(accordionWrapper);
+        const accordionWrapper = document.createElement('div');
+        accordionWrapper.className = 'accordion-wrapper';
+        
+        const accordionHeader = document.createElement('button');
+        accordionHeader.className = 'accordion-header';
+        accordionHeader.innerHTML = item.question + '<span class="material-icons small-arrow">keyboard_arrow_down</span>';
+        
+        const accordionContent = document.createElement('div');
+        accordionContent.className = 'accordion-content';
+        accordionContent.id = `content-${index}`;
+        accordionContent.style.display = 'none';
+        accordionContent.innerHTML = item.answer;
+
+        accordionHeader.onclick = () => toggleAccordion(accordionContent, accordionHeader);
+
+        accordionWrapper.appendChild(accordionHeader);
+        accordionWrapper.appendChild(accordionContent);
+        container.appendChild(accordionWrapper);
     });
-  
+
     accordionRoot.appendChild(container);
-  }
-  
+}
 
   document.addEventListener('DOMContentLoaded', () => renderAccordion(accordionData));
 
