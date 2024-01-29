@@ -8,8 +8,8 @@
 </head>
 <body>
     
-    <div class="header-wrapper">
-        <div class="logo">LOGO</div>
+    <header class="header-wrapper">
+        <div class="logo"><img src="img/logo.png" alt=""></div>
         <nav class="navigation">
             <ul>
                 <li><a href="#">მთავარი</a></li>
@@ -18,41 +18,64 @@
                 <li><a href="#">რისკები</a></li>
             </ul>
         </nav>
-        </div>
+    </header>
 
         <div class="hero-section">
             <img src="img/hero.jpg" alt="Hero Image" class="hero-image">
             <div class="overlay-text">
-                <h1>Your Hero Text Here</h1>
-                <p>More descriptive text can go here.</p>
+                <h1>TBC x USAID</h1>
+                <p>ᲢᲔᲥᲜᲝᲚᲝᲒᲘᲣᲠᲘ ᲒᲐᲜᲐᲗᲚᲔᲑᲘᲡᲗᲕᲘᲡ</p>
             </div>
         </div>
 
         <section class="about-text-section">
             <div class="about-text-container">
-            <span class="about-text">
+            <p class="about-text">
                 „ TBC x USAID - ტექნოლოგიური განათლებისთვის “ პროგრამა<br/>
                  საინფორმაციო ტექნოლოგიებით დაინტერესებულ ადამიანებს<br/> 
                  გთავაზობთ სრულად დაფინანსებულ ონლაინ საგანმანათლებლო <br/> 
                  პრაქტიკულ კურსებს  სხვადასხვა ICT მიმართულებით.<br />
-                 წარმატებულ კურსდამთავრებულებს ეძლევათ შესაძლებლობა<br />დასაქმდნენ თიბისისა და მის პარტნიორ კომპანიებში.</span>
-                 <div><a>გაიგე მეტი</a></div>
+                 წარმატებულ კურსდამთავრებულებს ეძლევათ შესაძლებლობა<br />დასაქმდნენ თიბისისა და მის პარტნიორ კომპანიებში.</p>
+                 <div><a class="borderless-btn m-top">გაიგე მეტი</a></div>
             </div>
         </section>
 
 
         <section class="card-section">
+            <div class="card-title-section"><h2>სასწავლო კურსები</h2></div>
             <div class="card-grid">
 
             </div>
         </section>
 
-    <div id="carousel-section"></div>
+    <div class="carousel-outer-section">
+        <div class="carousel-title">
+        <h3>პროექტის პრატნიორები</h3>
+        </div>
+    <div id="carousel-section">
+        <button class="carousel-arrow left" onclick="moveLeft()">&#9664</button>
+        <div class="dots-and-logos-container">
+        <div id="carousel-container">
+        </div>
+        <div id="carousel-dots-container"></div>
+        </div>
+        <button class="carousel-arrow right" onclick="moveRight()">&#9654</button>
+    </div>
+</div>
 
     <div class="accordion-section">
         <div class="accordion-title-section"><h3>ხშირად დასმული კითხვები</h3><button class="borderless-btn">ყველა კითხვა</button></div>
         <div id="accordion-content"></div>
     </div>
+    <footer>
+        <div class="footer-left"><div><img src="img/logo.png" alt="">
+            <p>© 2023 ყველა უფლება დაცულია</p>
+            <p>წესები და პირობები</p></div></div>
+
+        <div class="footer-right"><div><div><a><img src="img/fb.png" alt=""></a>
+            <a><img src="img/yt.png" alt=""></a></div>
+            <button class="btn-withborder">მოგვწერეთ</button></div></div>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
